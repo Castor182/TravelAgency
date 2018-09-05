@@ -7,23 +7,23 @@
 		<link rel="stylesheet" type="text/css"href="/assets/css/styles.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 		<link href="https://fonts.googleapis.com/css?family=Cuprum|Pacifico" rel="stylesheet">
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	</head>
 <body>
 <div id="container">
 	<div id="header"><nav class="nav-wrapper">
 		<div class="nav-container">
 				<div class="CompanyName">
-				<h1><a href="#" style="text-decoration:none; color: black;">Travel Agency</a></h1>
+				<h1 class="logo"><a href="#" style="text-decoration:none; color: black;">Travel Agency</a></h1>
 				</div>
 				<div class="navlinks-container">				
 					<div class="dropdown">
 					<button class="dropbtn">Destinations</button>
 						<div class="dropdown-content">
-							<a href="#">Africa</a>
-							<a href="#">Europe</a>
-							<a href="#">Americas</a>
-							<a href="#">Asia</a>
-							<a href="#">Oceania</a>
+							<a id="Africa">Africa</a>
+							<a id="Europe">Europe</a>
+							<a id="Americas">Americas</a>
+							<a id="Asia">Asia and Oceania</a>							
 						</div>
 					</div>
 					<div class="dropdown">
@@ -44,64 +44,932 @@
 	<h1>Perfect your dream vacation</h1>
 	<h2>Get matched to top travel specialists,</br>
 		travel to the four corners of the world.</h2>
-	<div class="content-containers">
-	<div class="Featured">
-		<div class="Featured-header">		
+
+<!-- DESTINATION CONTAINER-->
+
+<div class="content-containers">
+
+<!-- FEATURED CARD VIEW -->	
+
+<!-- VERTICAL CARDS -->
+	<div class="Featured-card">
+		<div class="Featured-header">	
+		<button class="View" id="List"><span><i class="far fa-bars"></i></span></button>	
 		<h3><span>Featured</span></h3>
-		</div>
-		<div class="Featured-content">
-			<script src="/assets/js/Featured.js"></script>
-			<script src="/assets/js/knockout-3.4.2.js"></script>
-			<script src="/assets/js/require.js"></script>
-		 </div>
-		 <table class="Featured-city" width="100%">
-			 <col width="200">
-			 <col width="200">
-			 <col width="200">
-			 <col width="200">
-			 <col width="200">
+		</div>		
+		 <table class="city-grid" width="100%">
+			 <col width=200px;>
+			 <col width=200px;>
+			 <col width=200px;>
+			 <col width=200px;>
+			 <col width=200px;>
 			 <thead>
+			 </thead>
+			 	<tr class="Book-now">
+					<td><button class="bookbtn">book now</button></td>
+					<td><button class="bookbtn">book now</button></td>
+					<td><button class="bookbtn">book now</button></td>
+					<td><button class="bookbtn">book now</button></td>
+					<td><button class="bookbtn">book now</button></td>
+				</tr>
 				 <tr class="images">					
-					<td align="center"><a href="/assets/images/places/africa/namibia.jpg"></a>
+					<td class="city-image"><a href="/assets/images/places/africa/namibia.jpg"></a>
 					<img width="200" height="150" src="/assets/images/places/africa/namibia.jpg"></td>
-					<td align="center"><a href="/assets/images/places/europe/cyprus.jpg"></a>
+					<td class="city-image"><a href="/assets/images/places/europe/cyprus.jpg"></a>
 					<img width="200" height="150" src="/assets/images/places/europe/cyprus.jpg"></td>
-					<td align="center"><a href="/assets/images/places/americas/brasil.jpg"></a>
+					<td class="city-image"><a href="/assets/images/places/americas/brasil.jpg"></a>
 					<img width="200" height="150" src="/assets/images/places/americas/brasil.jpg"></td>
-					<td align="center"><a href="/assets/images/places/europe/rome.jpg"></a>
+					<td class="city-image"><a href="/assets/images/places/europe/rome.jpg"></a>
 					<img width="200" height="150" src="/assets/images/places/europe/rome.jpg"></td>
-					<td align="center"><a href="/assets/images/places/asia and oceania/japan.jpg"></a>
-					<img width="200" height="150" src="/assets/images/places/asia and oceania/japan.jpg"></td>					
+					<td class="city-image"><a href="/assets/images/places/asia/japan.jpg"></a>
+					<img width="200" height="150" src="/assets/images/places/asia/japan.jpg"></td>					
 				</tr>
 			</thead>
 				<tr class="city-name">
-					 <td>Namibia</td>
-					 <td>Cyprus</td>
+					 <td id = "city-name-grid">Namibia</td>
+					 <td id = "city-name-grid">Cyprus</td>
+					 <td id = "city-name-grid">Brasil</td>
+					 <td id = "city-name-grid">Rome</td>
+					 <td id = "city-name-grid">Japan</td>
+				 </tr>
+				 <tr class="city-description">
+					 <td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+					 <td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+					 <td id="city-description-grid">Lorem ipsum.</td>
+					 <td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+					 <td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet. Lorem ipsum.</td>					
+				</tr>
+
+		 </table>
+		  <table class="city-list" columns="3">
+				<col width=20%>
+				<col width=60%>
+				<col width=20%;>
+				<thead>
+				</thead>
+					<tr class="Namibia-list">
+						<td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/africa/namibia.jpg"></td>
+						<td class="city-name" id="city-name-list">Namibia</td>
+					</tr>
+					<tr>
+						<td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+						<td><button class="bookbtn">book now</button></td>							
+					</tr>
+					<tr>
+						<td>placeholder</td>
+					</tr>		
+			   <thead>
+				</thead>
+				   <tr class="Namibia-list">
+					   <td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/europe/cyprus.jpg"></td>
+					   <td class="city-name" id="city-name-list">Cyprus</td>
+				   </tr>
+				   <tr>
+					   <td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+					   <td><button class="bookbtn">book now</button></td>							
+				   </tr>
+				   <tr>
+					   <td>placeholder</td>
+				   </tr>
+				   <thead>
+					</thead>
+					   <tr class="Namibia-list">
+						   <td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/americas/brasil.jpg"></td>
+						   <td class="city-name" id="city-name-list">Brasil</td>
+					   </tr>
+					   <tr>
+						   <td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+						   <td><button class="bookbtn">book now</button></td>							
+					   </tr>
+					   <tr>
+						   <td>placeholder</td>
+					   </tr>
+				   <thead>
+					</thead>
+					   <tr class="Namibia-list">
+						   <td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/europe/rome.jpg"></td>
+						   <td class="city-name" id="city-name-list">Rome</td>
+					   </tr>
+					   <tr>
+						   <td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+						   <td><button class="bookbtn">book now</button></td>							
+					   </tr>
+					   <tr>
+						   <td>placeholder</td>
+					   </tr>
+					   <tr class="Namibia-list">
+						   <td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/asia/japan.jpg"></td>
+						   <td class="city-name" id="city-name-list">Japan</td>
+					   </tr>
+					   <tr class="Namibia-list">
+						   <td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+						   <td><button class="bookbtn">book now</button></td>							
+					   </tr>
+					   <tr>
+						   <td>placeholder</td>
+					   </tr>
+			   </table>
+	</div>
+	
+	<!-- AFRICA -->
+
+	<div class="Africa">
+			<div class="Africa-header">		
+			<button class="View" id="List"><span><i class="far fa-bars"></i></span></button>
+			<h3><span>Africa</span></h3>
+			</div>
+			 <table class="city-grid" width="100%">
+					<col width=200px;>
+					<col width=200px;>
+					<col width=200px;>
+					<col width=200px;>
+					<col width=200px;>
+				 <thead>
+				 </thead>
+				 <tr class="Book-now">
+						<td><button class="bookbtn">book now</button></td>
+						<td><button class="bookbtn">book now</button></td>
+						<td><button class="bookbtn">book now</button></td>
+						<td><button class="bookbtn">book now</button></td>
+						<td><button class="bookbtn">book now</button></td>
+					</tr>
+					 <tr class="images">					
+						<td class="africa-city-image"><a href="/assets/images/places/africa/cabo_verde.jpg"></a>
+						<img width="200" height="150" src="/assets/images/places/africa/cabo_verde.jpg"></td>
+						<td class="africa-city-image"><a href="/assets/images/places/africa/namibia.jpg"></a>
+						<img width="200" height="150" src="/assets/images/places/africa/namibia.jpg"></td>
+						<td class="africa-city-image"><a href="/assets/images/places/africa/tanzania.jpg"></a>
+						<img width="200" height="150" src="/assets/images/places/africa/tanzania.jpg"></td>
+						<td class="africa-city-image"><a href="/assets/images/places/africa/cabo_verde.jpg"></a>
+						<img width="200" height="150" src="/assets/images/places/africa/cabo_verde.jpg"></td>
+						<td class="africa-city-image"><a href="/assets/images/places/africa/namibia.jpg"></a>
+						<img width="200" height="150" src="/assets/images/places/africa/namibia.jpg"></td>					
+					</tr>				
+					<tr class="city-name">
+						 <td>Cabo Verde</td>
+						 <td>Namibia</td>
+						 <td>Tanzania</td>
+						 <td>Cabo Verde</td>
+						 <td>Namibia</td>
+					 </tr>
+					 <tr class="city-description">
+						<td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+						<td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+						<td id="city-description-grid">Lorem ipsum.</td>
+						<td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+						<td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet. Lorem ipsum.</td>					
+					</tr>			 
+			 </table>
+			 <table class="row2" id="Africa-city-2" width="100%">
+					<col width=200px;>
+					<col width=200px;>
+					<col width=200px;>
+					<col width=200px;>
+					<col width=200px;>
+					<thead>
+					</thead>
+					<tr class="Book-now">
+							<td><button class="bookbtn">book now</button></td>
+							<td><button class="bookbtn">book now</button></td>
+							<td><button class="bookbtn">book now</button></td>
+							<td><button class="bookbtn">book now</button></td>
+							<td><button class="bookbtn">book now</button></td>
+						</tr>
+						<tr class="images">					
+						   <td class="africa-city-image"><a href="/assets/images/places/africa/tanzania.jpg"></a>
+						   <img width="200" height="150" src="/assets/images/places/africa/tanzania.jpg"></td>
+						   <td class="africa-city-image"><a href="/assets/images/places/africa/cabo_verde.jpg"></a>
+						   <img width="200" height="150" src="/assets/images/places/africa/cabo_verde.jpg"></td>
+						   <td class="africa-city-image"><a href="/assets/images/places/africa/namibia.jpg"></a>
+						   <img width="200" height="150" src="/assets/images/places/africa/namibia.jpg"></td>
+						   <td class="africa-city-image"><a href="/assets/images/places/africa/tanzania.jpg"></a>
+						   <img width="200" height="150" src="/assets/images/places/africa/tanzania.jpg"></td>
+						   <td class="africa-city-image"><a href="/assets/images/places/africa/cabo_verde.jpg"></a>
+						   <img width="200" height="150" src="/assets/images/places/africa/cabo_verde.jpg"></td>					
+					   </tr>				   
+					   <tr class="city-name">
+							<td>Tanzania</td>
+							<td>Cabo Verde</td>
+							<td>Namibia</td>
+							<td>Tanzania</td>
+							<td>Cabo Verde</td>
+						</tr>
+						<tr class="city-description">
+							<td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+							<td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+							<td id="city-description-grid">Lorem ipsum.</td>
+							<td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+							<td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet. Lorem ipsum.</td>					
+					   </tr>		 
+				</table>
+				<table class="city-list" columns="3">
+						<col width=20%>
+						<col width=60%>
+						<col width=20%;>
+						<thead>
+						</thead>
+							<tr class="Namibia-list">
+								<td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/africa/cabo_verde.jpg"></td>
+								<td class="city-name" id="city-name-list">Cabo Verde</td>
+							</tr>
+							<tr>
+								<td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+								<td><button class="bookbtn">book now</button></td>							
+							</tr>
+							<tr>
+								<td>placeholder</td>
+							</tr>		
+					   <thead>
+						</thead>
+						   <tr class="Namibia-list">
+							   <td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/africa/namibia.jpg"></td>
+							   <td class="city-name" id="city-name-list">Namibia</td>
+						   </tr>
+						   <tr>
+							   <td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+							   <td><button class="bookbtn">book now</button></td>							
+						   </tr>
+						   <tr>
+							   <td>placeholder</td>
+						   </tr>
+						   <thead>
+							</thead>
+							   <tr class="Namibia-list">
+								   <td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/africa/tanzania.jpg"></td>
+								   <td class="city-name" id="city-name-list">Tanzania</td>
+							   </tr>
+							   <tr>
+								   <td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+								   <td><button class="bookbtn">book now</button></td>							
+							   </tr>
+							   <tr>
+								   <td>placeholder</td>
+							   </tr>
+							   <thead>
+								</thead>
+									<tr class="Namibia-list">
+										<td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/africa/cabo_verde.jpg"></td>
+										<td class="city-name" id="city-name-list">Cabo Verde</td>
+									</tr>
+									<tr>
+										<td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+										<td><button class="bookbtn">book now</button></td>							
+									</tr>
+									<tr>
+										<td>placeholder</td>
+									</tr>		
+							   <thead>
+								</thead>
+								   <tr class="Namibia-list">
+									   <td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/africa/namibia.jpg"></td>
+									   <td class="city-name" id="city-name-list">Namibia</td>
+								   </tr>
+								   <tr>
+									   <td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+									   <td><button class="bookbtn">book now</button></td>							
+								   </tr>
+								   <tr>
+									   <td>placeholder</td>
+								   </tr>
+								   <thead>
+									</thead>
+									   <tr class="Namibia-list">
+										   <td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/africa/tanzania.jpg"></td>
+										   <td class="city-name" id="city-name-list">Tanzania</td>
+									   </tr>
+									   <tr>
+										   <td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+										   <td><button class="bookbtn">book now</button></td>							
+									   </tr>
+									   <tr>
+										   <td>placeholder</td>
+								</tr>							   
+						   </thead>
+					   </table>
+	</div>	
+	
+	<!-- AMERICAS -->
+	
+	<div class="Americas">
+		<div class="Americas-header">		
+		<button class="View" id="List"><span><i class="far fa-bars"></i></span></button>
+		<h3><span>Americas</span></h3>
+		</div>
+		 <table class="city-grid" width="100%">
+				<col width=200px;>
+				<col width=200px;>
+				<col width=200px;>
+				<col width=200px;>
+				<col width=200px;>
+			 <thead>
+			 </thead>
+			 <tr class="Book-now">
+					<td><button class="bookbtn">book now</button></td>
+					<td><button class="bookbtn">book now</button></td>
+					<td><button class="bookbtn">book now</button></td>
+					<td><button class="bookbtn">book now</button></td>
+					<td><button class="bookbtn">book now</button></td>
+				</tr>
+				 <tr class="images">					
+					<td class="americas-city-image"><a href="/assets/images/places/americas/argentina.jpg"></a>
+					<img width="200" height="150" src="/assets/images/places/americas/argentina.jpg"></td>
+					<td class="americas-city-image"><a href="/assets/images/places/americas/brasil.jpg"></a>
+					<img width="200" height="150" src="/assets/images/places/americas/brasil.jpg"></td>
+					<td class="americas-city-image"><a href="/assets/images/places/americas/chile.jpg"></a>
+					<img width="200" height="150" src="/assets/images/places/americas/chile.jpg"></td>
+					<td class="americas-city-image"><a href="/assets/images/places/americas/mexico.jpg"></a>
+					<img width="200" height="150" src="/assets/images/places/americas/mexico.jpg"></td>
+					<td class="americas-city-image"><a href="/assets/images/places/americas/argentina.jpg"></a>
+					<img width="200" height="150" src="/assets/images/places/americas/argentina.jpg"></td>					
+				</tr>
+			</thead>
+				<tr class="city-name">
+					 <td>Argentina</td>
 					 <td>Brasil</td>
-					 <td>Rome</td>
+					 <td>Chile</td>
+					 <td>Mexico</td>
+					 <td>Argentina</td>
+				 </tr>
+				 <tr class="city-description">
+					<td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+					<td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+					<td id="city-description-grid">Lorem ipsum.</td>
+					<td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+					<td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet. Lorem ipsum.</td>					
+				</tr>		
+ 		 </table>	
+		 <table class="row2" id="Americas-city-2" width="100%">
+				<col width=200px;>
+				<col width=200px;>
+				<col width=200px;>
+				<col width=200px;>
+				<col width=200px;>
+				<thead>
+				</thead>
+				<tr class="Book-now">
+						<td><button class="bookbtn">book now</button></td>
+						<td><button class="bookbtn">book now</button></td>
+						<td><button class="bookbtn">book now</button></td>
+						<td><button class="bookbtn">book now</button></td>
+						<td><button class="bookbtn">book now</button></td>
+					</tr>	
+					<tr class="images">					
+					   <td class="americas-city-image"><a href="/assets/images/places/americas/brasil.jpg"></a>
+					   <img width="200" height="150" src="/assets/images/places/americas/brasil.jpg"></td>
+					   <td class="americas-city-image"><a href="/assets/images/places/americas/chile.jpg"></a>
+					   <img width="200" height="150" src="/assets/images/places/americas/chile.jpg"></td>
+					   <td class="americas-city-image"><a href="/assets/images/places/americas/mexico.jpg"></a>
+					   <img width="200" height="150" src="/assets/images/places/americas/mexico.jpg"></td>
+					   <td class="americas-city-image"><a href="/assets/images/places/americas/argentina.jpg"></a>
+					   <img width="200" height="150" src="/assets/images/places/americas/argentina.jpg"></td>
+					   <td class="americas-city-image"><a href="/assets/images/places/americas/argentina.jpg"></a>
+						<img width="200" height="150" src="/assets/images/places/americas/argentina.jpg"></td>					
+				   </tr>			   
+				   <tr class="city-name">
+						<td>Brasil</td>
+						<td>Chile</td>
+						<td>Mexico</td>
+						<td>Argentina</td>
+						<td>Brasil</td>
+					</tr>
+					<tr class="city-description">
+						<td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+						<td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+						<td id="city-description-grid">Lorem ipsum.</td>
+						<td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+						<td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet. Lorem ipsum.</td>					
+				   </tr>		 
+			</table>
+			<table class="city-list" columns="3">
+					<col width=20%>
+					<col width=60%>
+					<col width=20%;>
+					<thead>
+					</thead>
+						<tr class="Namibia-list">
+							<td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/americas/argentina.jpg"></td>
+							<td class="city-name" id="city-name-list">Argentina</td>
+						</tr>
+						<tr>
+							<td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+							<td><button class="bookbtn">book now</button></td>							
+						</tr>
+						<tr>
+							<td>placeholder</td>
+						</tr>		
+				   <thead>
+					</thead>
+					   <tr class="Namibia-list">
+						   <td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/americas/brasil.jpg"></td>
+						   <td class="city-name" id="city-name-list">Brasil</td>
+					   </tr>
+					   <tr>
+						   <td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+						   <td><button class="bookbtn">book now</button></td>							
+					   </tr>
+					   <tr>
+						   <td>placeholder</td>
+					   </tr>
+					   <thead>
+						</thead>
+						   <tr class="Namibia-list">
+							   <td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/americas/chile.jpg"></td>
+							   <td class="city-name" id="city-name-list">Chile</td>
+						   </tr>
+						   <tr>
+							   <td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+							   <td><button class="bookbtn">book now</button></td>							
+						   </tr>
+						   <tr>
+							   <td>placeholder</td>
+						   </tr>
+					   <thead>
+						</thead>
+						   <tr class="Namibia-list">
+							   <td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/americas/mexico.jpg"></td>
+							   <td class="city-name" id="city-name-list">Mexico</td>
+						   </tr>
+						   <tr>
+							   <td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+							   <td><button class="bookbtn">book now</button></td>							
+						   </tr>
+						   <tr>
+							   <td>placeholder</td>
+						   </tr>
+						   <tr class="Namibia-list">
+								<td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/americas/argentina.jpg"></td>
+								<td class="city-name" id="city-name-list">Argentina</td>
+							</tr>
+							<tr>
+								<td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+								<td><button class="bookbtn">book now</button></td>							
+							</tr>
+							<tr>
+								<td>placeholder</td>
+							</tr>		
+					   <thead>
+						</thead>
+						   <tr class="Namibia-list">
+							   <td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/americas/brasil.jpg"></td>
+							   <td class="city-name" id="city-name-list">Brasil</td>
+						   </tr>
+						   <tr>
+							   <td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+							   <td><button class="bookbtn">book now</button></td>							
+						   </tr>
+						   <tr>
+							   <td>placeholder</td>
+						   </tr>
+						   <thead>
+							</thead>
+							   <tr class="Namibia-list">
+								   <td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/americas/chile.jpg"></td>
+								   <td class="city-name" id="city-name-list">Chile</td>
+							   </tr>
+							   <tr>
+								   <td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+								   <td><button class="bookbtn">book now</button></td>							
+							   </tr>
+							   <tr>
+								   <td>placeholder</td>
+							   </tr>
+						   <thead>
+							</thead>
+							   <tr class="Namibia-list">
+								   <td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/americas/mexico.jpg"></td>
+								   <td class="city-name" id="city-name-list">Mexico</td>
+							   </tr>
+							   <tr>
+								   <td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+								   <td><button class="bookbtn">book now</button></td>							
+							   </tr>
+							   <tr>
+								   <td>placeholder</td>
+							   </tr>
+					   		</thead>
+			</table>
+	</div>
+
+<!-- ASIA -->
+	
+	<div class="Asia">
+		<div class="Asia-header">
+		<button class="View" id="List"><span><i class="far fa-bars"></i></span></button>	
+		<h3><span>Asia and Oceania</span></h3>
+		</div>
+		 <table class="city-grid" width="100%">
+				<col width=200px;>
+				<col width=200px;>
+				<col width=200px;>
+				<col width=200px;>
+				<col width=200px;>
+			 <thead>
+			 </thead>
+			 <tr class="Book-now">
+					<td><button class="bookbtn">book now</button></td>
+					<td><button class="bookbtn">book now</button></td>
+					<td><button class="bookbtn">book now</button></td>
+					<td><button class="bookbtn">book now</button></td>
+					<td><button class="bookbtn">book now</button></td>
+				</tr>	 
+				 <tr class="images">
+					<td class="city-image"><a href="/assets/images/places/asia/cambodja.jpg"></a>
+					<img width="200" height="150" src="/assets/images/places/asia/cambodja.jpg"></td>						
+					<td class="city-image"><a href="/assets/images/places/asia/japan.jpg"></a>
+					<img width="200" height="150" src="/assets/images/places/asia/japan.jpg"></td>
+					<td class="city-image"><a href="/assets/images/places/asia/new_zealand.jpg"></a>
+					<img width="200" height="150" src="/assets/images/places/asia/new_zealand.jpg"></td>
+					<td class="city-image"><a href="/assets/images/places/asia/south_korea.jpg"></a>
+					<img width="200" height="150" src="/assets/images/places/asia/south_korea.jpg"></td>
+					<td class="city-image"><a href="/assets/images/places/asia/cambodja.jpg"></a>
+					<img width="200" height="150" src="/assets/images/places/asia/cambodja.jpg"></td>				
+				</tr>			
+				<tr class="city-name">
+					 <td>Cambodja</td>
+					 <td>Japan</td>
+					 <td>New Zealand</td>
+					 <td>South Korea</td>
+					 <td>Cambodja</td>
+				 </tr>
+				 <tr class="city-description">
+					<td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+					<td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+					<td id="city-description-grid">Lorem ipsum.</td>
+					<td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+					<td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet. Lorem ipsum.</td>					
+				</tr>			 
+		 </table>
+		 <table class="row2" id="Asia-city-2" width="100%">
+				<col width=200px;>
+				<col width=200px;>
+				<col width=200px;>
+				<col width=200px;>
+				<col width=200px;>
+			 <thead>
+			 </thead>
+			 <tr class="Book-now">
+					<td><button class="bookbtn">book now</button></td>
+					<td><button class="bookbtn">book now</button></td>
+					<td><button class="bookbtn">book now</button></td>
+					<td><button class="bookbtn">book now</button></td>
+					<td><button class="bookbtn">book now</button></td>
+				</tr>
+				 <tr class="images">					
+					<td class="city-image"><a href="/assets/images/places/asia/japan.jpg"></a>
+					<img width="200" height="150" src="/assets/images/places/asia/japan.jpg"></td>
+					<td class="city-image"><a href="/assets/images/places/asia/new_zealand.jpg"></a>
+					<img width="200" height="150" src="/assets/images/places/asia/new_zealand.jpg"></td>
+					<td class="city-image"><a href="/assets/images/places/asia/south_korea.jpg"></a>
+					<img width="200" height="150" src="/assets/images/places/asia/south_korea.jpg"></td>
+					<td class="city-image"><a href="/assets/images/places/asia/cambodja.jpg"></a>
+					<img width="200" height="150" src="/assets/images/places/asia/cambodja.jpg"></td>
+					<td class="city-image"><a href="/assets/images/places/asia/japan.jpg"></a>
+					<img width="200" height="150" src="/assets/images/places/asia/japan.jpg"></td>				
+				</tr>
+			</thead>
+				<tr class="city-name">
+					 <td>Japan</td>
+					 <td>New Zealand</td>
+					 <td>South Korea</td>
+					 <td>Cambodja</td>
 					 <td>Japan</td>
 				 </tr>
 				 <tr class="city-description">
-					 <td class="city-description">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
-					 <td class="city-description">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
-					 <td class="city-description">Lorem ipsum.</td>
-					 <td class="city-description">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
-					 <td class="city-description">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet. Lorem ipsum.</td>					
-				</tr>			 
+					<td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+					<td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+					<td id="city-description-grid">Lorem ipsum.</td>
+					<td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+					<td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet. Lorem ipsum.</td>					
+				</tr>
 		 </table>
-		 </div>
+		 <table class="city-list" columns="3">
+				<col width=20%>
+				<col width=60%>
+				<col width=20%;>
+				<thead>
+				</thead>
+					<tr class="Namibia-list">
+						<td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/asia/cambodja.jpg"></td>
+						<td class="city-name" id="city-name-list">Cambodja</td>
+					</tr>
+					<tr>
+						<td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+						<td><button class="bookbtn">book now</button></td>							
+					</tr>
+					<tr>
+						<td>placeholder</td>
+					</tr>		
+			   <thead>
+				</thead>
+				   <tr class="Namibia-list">
+					   <td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/asia/japan.jpg"></td>
+					   <td class="city-name" id="city-name-list">Japan</td>
+				   </tr>
+				   <tr>
+					   <td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+					   <td><button class="bookbtn">book now</button></td>							
+				   </tr>
+				   <tr>
+					   <td>placeholder</td>
+				   </tr>
+				   <thead>
+					</thead>
+					   <tr class="Namibia-list">
+						   <td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/asia/new_zealand.jpg"></td>
+						   <td class="city-name" id="city-name-list">New Zealand</td>
+					   </tr>
+					   <tr>
+						   <td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+						   <td><button class="bookbtn">book now</button></td>							
+					   </tr>
+					   <tr>
+						   <td>placeholder</td>
+					   </tr>
+				   <thead>
+					</thead>
+					   <tr class="Namibia-list">
+						   <td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/asia/south_korea.jpg"></td>
+						   <td class="city-name" id="city-name-list">South Korea</td>
+					   </tr>
+					   <tr>
+						   <td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+						   <td><button class="bookbtn">book now</button></td>							
+					   </tr>
+					   <tr>
+						   <td>placeholder</td>
+					   </tr>
+					   <tr class="Namibia-list">
+							<td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/asia/cambodja.jpg"></td>
+							<td class="city-name" id="city-name-list">Cambodja</td>
+						</tr>
+						<tr>
+							<td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+							<td><button class="bookbtn">book now</button></td>							
+						</tr>
+						<tr>
+							<td>placeholder</td>
+						</tr>		
+				   <thead>
+					</thead>
+					   <tr class="Namibia-list">
+						   <td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/asia/japan.jpg"></td>
+						   <td class="city-name" id="city-name-list">Japan</td>
+					   </tr>
+					   <tr>
+						   <td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+						   <td><button class="bookbtn">book now</button></td>							
+					   </tr>
+					   <tr>
+						   <td>placeholder</td>
+					   </tr>
+					   <thead>
+						</thead>
+						   <tr class="Namibia-list">
+							   <td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/asia/new_zealand.jpg"></td>
+							   <td class="city-name" id="city-name-list">New Zealand</td>
+						   </tr>
+						   <tr>
+							   <td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+							   <td><button class="bookbtn">book now</button></td>							
+						   </tr>
+						   <tr>
+							   <td>placeholder</td>
+						   </tr>
+					   <thead>
+						</thead>
+						   <tr class="Namibia-list">
+							   <td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/asia/south_korea.jpg"></td>
+							   <td class="city-name" id="city-name-list">South Korea</td>
+						   </tr>
+						   <tr>
+							   <td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+							   <td><button class="bookbtn">book now</button></td>							
+						   </tr>
+						   <tr>
+							   <td>placeholder</td>
+						   </tr>				
+			   </table>
+	</div>	
+
+<!-- EUROPE -->
+
+	<div class="Europe">
+			<div class="Europe-header">
+			<button class="View" id="List"><span><i class="far fa-bars"></i></span></button>		
+			<h3><span>Europe</span></h3>
+			</div>
+			 <table class="city-grid" width="100%">
+					<col width=200px;>
+					<col width=200px;>
+					<col width=200px;>
+					<col width=200px;>
+					<col width=200px;>
+				 <thead>
+				 </thead>
+				 <tr class="Book-now">
+						<td><button class="bookbtn">book now</button></td>
+						<td><button class="bookbtn">book now</button></td>
+						<td><button class="bookbtn">book now</button></td>
+						<td><button class="bookbtn">book now</button></td>
+						<td><button class="bookbtn">book now</button></td>
+					</tr>
+					 <tr class="images">					
+						<td class="city-image"><a href="/assets/images/places/europe/berlin.jpg"></a>
+						<img width="200" height="150" src="/assets/images/places/europe/berlin.jpg"></td>
+						<td class="city-image"><a href="/assets/images/places/europe/cyprus.jpg"></a>
+						<img width="200" height="150" src="/assets/images/places/europe/cyprus.jpg"></td>
+						<td class="city-image"><a href="/assets/images/places/europe/prague.jpg"></a>
+						<img width="200" height="150" src="/assets/images/places/europe/prague.jpg"></td>
+						<td class="city-image"><a href="/assets/images/places/europe/rome.jpg"></a>
+						<img width="200" height="150" src="/assets/images/places/europe/rome.jpg"></td>
+						<td class="city-image"><a href="/assets/images/places/europe/berlin.jpg"></a>
+						<img width="200" height="150" src="/assets/images/places/europe/berlin.jpg"></td>					
+					</tr>
+				</thead>
+					<tr class="city-name">
+						 <td>Berlin</td>
+						 <td>Cyprus</td>
+						 <td>Prague</td>
+						 <td>Rome</td>
+						 <td>Berlin</td>
+					 </tr>
+					 <tr class="city-description">
+						<td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+						<td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+						<td id="city-description-grid">Lorem ipsum.</td>
+						<td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+						<td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet. Lorem ipsum.</td>					
+					</tr>			 
+			 </table>
+			 <table class="row2" id="Europe-city-2" width="100%">
+					<col width=200px;>
+					<col width=200px;>
+					<col width=200px;>
+					<col width=200px;>
+					<col width=200px;>
+					<thead>
+					</thead>
+					<tr class="Book-now">
+							<td><button class="bookbtn">book now</button></td>
+							<td><button class="bookbtn">book now</button></td>
+							<td><button class="bookbtn">book now</button></td>
+							<td><button class="bookbtn">book now</button></td>
+							<td><button class="bookbtn">book now</button></td>
+						</tr>
+						<tr class="images">					
+						   <td class="city-image"><a href="/assets/images/places/europe/cyprus.jpg"></a>
+						   <img width="200" height="150" src="/assets/images/places/europe/cyprus.jpg"></td>
+						   <td class="city-image"><a href="/assets/images/places/europe/prague.jpg"></a>
+						   <img width="200" height="150" src="/assets/images/places/europe/prague.jpg"></td>
+						   <td class="city-image"><a href="/assets/images/places/europe/rome.jpg"></a>
+						   <img width="200" height="150" src="/assets/images/places/europe/rome.jpg"></td>
+						   <td class="city-image"><a href="/assets/images/places/europe/berlin.jpg"></a>
+						   <img width="200" height="150" src="/assets/images/places/europe/berlin.jpg"></td>
+						   <td class="city-image"><a href="/assets/images/places/europe/cyprus.jpg"></a>
+							<img width="200" height="150" src="/assets/images/places/europe/cyprus.jpg"></td>				
+					   </tr>
+				   </thead>
+					   <tr class="city-name">
+							<td>Cyprus</td>
+							<td>Prague</td>
+							<td>Rome</td>
+							<td>Berlin</td>
+							<td>Cyprus</td>
+						</tr>
+						<tr class="city-description">
+							<td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+							<td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+							<td id="city-description-grid">Lorem ipsum.</td>
+							<td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+							<td id="city-description-grid">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet. Lorem ipsum.</td>					
+					   </tr>			 
+				</table>
+				<table class="city-list" columns="3">
+						<col width=20%>
+						<col width=60%>
+						<col width=20%;>
+						<thead>
+						</thead>
+							<tr class="Namibia-list">
+								<td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/europe/berlin.jpg"></td>
+								<td class="city-name" id="city-name-list">Namibia</td>
+							</tr>
+							<tr>
+								<td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+								<td><button class="bookbtn">book now</button></td>							
+							</tr>
+							<tr>
+								<td>placeholder</td>
+							</tr>		
+					   <thead>
+						</thead>
+						   <tr class="Namibia-list">
+							   <td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/europe/cyprus.jpg"></td>
+							   <td class="city-name" id="city-name-list">Namibia</td>
+						   </tr>
+						   <tr>
+							   <td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+							   <td><button class="bookbtn">book now</button></td>							
+						   </tr>
+						   <tr>
+							   <td>placeholder</td>
+						   </tr>
+						   <thead>
+							</thead>
+							   <tr class="Namibia-list">
+								   <td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/europe/prague.jpg"></td>
+								   <td class="city-name" id="city-name-list">Namibia</td>
+							   </tr>
+							   <tr>
+								   <td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+								   <td><button class="bookbtn">book now</button></td>							
+							   </tr>
+							   <tr>
+								   <td>placeholder</td>
+							   </tr>
+						   <thead>
+							</thead>
+							   <tr class="Namibia-list">
+								   <td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/europe/rome.jpg"></td>
+								   <td class="city-name" id="city-name-list">Namibia</td>
+							   </tr>
+							   <tr>
+								   <td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+								   <td><button class="bookbtn">book now</button></td>							
+							   </tr>
+							   <tr>
+								   <td>placeholder</td>
+							   </tr>
+							   <tr class="Namibia-list">
+									<td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/europe/berlin.jpg"></td>
+									<td class="city-name" id="city-name-list">Namibia</td>
+								</tr>
+								<tr>
+									<td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+									<td><button class="bookbtn">book now</button></td>							
+								</tr>
+								<tr>
+									<td>placeholder</td>
+								</tr>		
+						   <thead>
+							</thead>
+							   <tr class="Namibia-list">
+								   <td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/europe/cyprus.jpg"></td>
+								   <td class="city-name" id="city-name-list">Namibia</td>
+							   </tr>
+							   <tr>
+								   <td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+								   <td><button class="bookbtn">book now</button></td>							
+							   </tr>
+							   <tr>
+								   <td>placeholder</td>
+							   </tr>
+							   <thead>
+								</thead>
+								   <tr class="Namibia-list">
+									   <td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/europe/prague.jpg"></td>
+									   <td class="city-name" id="city-name-list">Namibia</td>
+								   </tr>
+								   <tr>
+									   <td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+									   <td><button class="bookbtn">book now</button></td>							
+								   </tr>
+								   <tr>
+									   <td>placeholder</td>
+								   </tr>
+							   <thead>
+								</thead>
+								   <tr class="Namibia-list">
+									   <td class="city-image" id="city-image-list" rowspan="3"><img width="200" height="150" src="/assets/images/places/europe/rome.jpg"></td>
+									   <td class="city-name" id="city-name-list">Namibia</td>
+								   </tr>
+								   <tr>
+									   <td class="city-description" id="city-description-list">Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</td>
+									   <td><button class="bookbtn">book now</button></td>							
+								   </tr>
+								   <tr>
+									   <td>placeholder</td>
+								   </tr>
+					</table>			 
 	</div>
+</div>			
 </br>
 </br>
+
+<!-- REVIEWS -->
+
 	<div class="Reviews">
 		<div class="Reviews-header">
 		<h3><span>Reviews</span></h3>
-			<table class="customer-one">
+			<table class="customer-one" columns="2">
 				<thead class="customer-one-title">
 					<th colspan="2">Luxury Africa Family Safari, Kenya, Maasai Culture</th>
 					<tr>
-						<td><img width="200" height="200" src="/assets/images/reviews/africa.jpg"></td>
-						<td>This trip was easily the trip of a lifetime for our family of four, and it will be quite some time before we stop talking about it!!  We have done a lot of travel with our children alongside us, but the adventures that were found around every corner on this African safari were beyond our expectations, and far...</td>
+						<td class="customer-image" id="customer-one-image" rowspan="2"><img width="150" height="150" src="/assets/images/reviews/africa.jpg"></td>
+						<td class="customer-rating" id="customer-one-rating"><span class="fa fa-star checked" style="color: yellow"></span><span class="fa fa-star" style="color: yellow"></span><span class="fa fa-star" style="color: yellow"></span><span class="fa fa-star" style="color: yellow"></span><span class="fa fa-star" style="color: yellow"></span> by traveler <a href="#"><span style="color: red">Jeff M.</span><a></a> </td>
+					</tr>
+					<tr>
+						<td class="customer-review" id="customer-one-review">This trip was easily the trip of a lifetime for our family of four, and it will be quite some time before we stop talking about it!!  We have done a lot of travel with our children alongside us, but the adventures that were found around every corner on this African safari were beyond our expectations, and far... <a href="#"><span style="color: red">Read more</span><a></td>							
 					</tr>
 				</thead>
 			</table>
@@ -109,25 +977,32 @@
 					<thead class="customer-two-title">
 						<th colspan="2">Luxury Tour of India, Varanasi, Delhi, Agra, Jaipur</th>
 						<tr>
-							<td><img width="200" height="200" src="/assets/images/reviews/asia.jpg"></td>
-							<td>Few things command more respect than hard work, integrity, dedication and the ability to follow through. These are among the many attributes we experienced from start to finish when organizing our trip to India with this travel agent. This travel agent is an excellent listener and pays attention to detail; a lost...</td>
+							<td class="customer-image" id="customer-two-image" rowspan="2"><img width="150" height="150" src="/assets/images/reviews/asia.jpg"></td>
+							<td class="customer-rating" id="customer-two-rating"><span class="fa fa-star checked" style="color: yellow"></span><span class="fa fa-star" style="color: yellow"></span><span class="fa fa-star" style="color: yellow"></span><span class="fa fa-star" style="color: yellow"></span><span class="fa fa-star" style="color: yellow"></span> by traveler <a href="#"><span style="color: red">Stuart M.</span><a></a> </td>
+							
+						</tr>
+							<td class="customer-review" id="customer-two-review">Few things command more respect than hard work, integrity, dedication and the ability to follow through. These are among the many attributes we experienced from start to finish when organizing our trip to India with this travel agent. This travel agent is an excellent listener and pays attention to detail; a lost... <a href="#"><span style="color: red">Read more</span><a></td>
+						<tr>
+								
 						</tr>
 					</thead>
 				</table>
 				<table class="customer-three-title">
 						<thead class="reviews">
-							<th colspan="2">Luxury Family Trip to New Zealand, Queenstown, Wellington, Lord of the Rings Sites</th>
+							<th colspan="2">Luxury Family Trip to New Zealand, Queenstown, Wellington, Lord of the Rings Sites</th>							
 							<tr>
-								<td><img width="200" height="200" src="/assets/images/reviews/nz.jpg"></td>
-								<td>We're sorry that we can only give this travel agency 5 stars -- we'd have preferred 10 stars or more!  What an awesome trip!  It helps that New Zealand is probably the most beautiful place on the planet, but more importantly, our travel agency arranged our access to the country’s wonders so seamlessly. We’re...</td>
+								<td class="customer-image" id="customer-three-image" rowspan="2"><img width="150" height="150" src="/assets/images/reviews/nz.jpg"></td>								
+								<td class="customer-rating" id="customer-three-rating"><span class="fa fa-star checked" style="color: yellow"></span><span class="fa fa-star" style="color: yellow"></span><span class="fa fa-star" style="color: yellow"></span><span class="fa fa-star" style="color: yellow"></span><span class="fa fa-star" style="color: yellow"></span> by traveler <a href="#"><span style="color: red">Sharon W.</span><a></a> </td>								
+							</tr>
+							<tr>
+								<td class="customer-review" id="customer-three-review">We're sorry that we can only give this travel agency 5 stars -- we'd have preferred 10 stars or more!  What an awesome trip!  It helps that New Zealand is probably the most beautiful place on the planet, but more importantly, our travel agency arranged our access to the country’s wonders so seamlessly. We’re... <a href="#"><span style="color: red">Read more</span><a></td>								
 							</tr>
 						</thead>
 					</table>
 		</div>
 	</div>
 	</div>
-</div>
-	<div id="footer" class="footer-container">
+<div id="footer" class="footer-container">
 		<div id="contact-info">
 			<div id="businessadd1"><a href="#" style="text-decoration:none;">Avenida da Republica</a></div>
 			<div id="businessadd2"><a href="#" style="text-decoration:none;">8000-000 Faro</a></div></br>
@@ -135,16 +1010,18 @@
 			<div id="businessemail"><a href="#" style="text-decoration:none;">info@travelagency.com</a></div>
 		</div>
 		<div id="social-media">
-			<a href="#" class="fab fa-facebook-f fa-lg" style="text-decoration:none;"></a>
+			<a href="#" class="fab fa-facebook-f fa-lg"></a>
 			<a href="#" class="fab fa-twitter fa-lg" style="text-decoration:none;"></a>
 			<a href="#" class="fab fa-pinterest fa-lg" style="text-decoration:none;"></a>
 			<a href="#" class="fab fa-instagram fa-lg" style="text-decoration:none;"></a>
 			<a href="#" class="fab fa-tumblr fa-lg" style="text-decoration:none;"></a>
 		</div>
 		<div id="footer-logo">
-			<img src="/assets/images/logo_small.png" alt="Footer Logo" height="54" width="75" style="-webkit-filter: grayscale(100%); filter: grayscale(100%)">
+			<img src="/assets/images/logo_large.png" alt="Footer Logo" height="108" width="150" style="-webkit-filter: grayscale(100%); filter: grayscale(100%) invert(100%);">
 		</div>	
 	</div>
 </div>
+		<script type="text/javascript" src="/assets/js/main.js"></script>
+		<script type="text/javascript" src="/assets/js/destinations.js"></script>
 </body>
 </html>

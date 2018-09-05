@@ -1,47 +1,81 @@
-h1 {text-align: center; font-family: 'Pacifico', cursive; font-size: 20px; font-weight: normal}
-h2 {text-align: center; font-family: 'Cuprum', sans-serif; font-size: 20px; font-weight: normal}
-h3 {display: flex; align-items: center; justify-content: center;}
-h3 span {color: red; background: #fff; margin: 0 30px; font-family: 'Pacifico', cursive;}
-h3:before {background: red; height: 2px; flex: 1; content: ''}
+/* BODY SETUP */
 html {height: 100%;}
-.city-name {text-align: center; font-family: 'Pacifico', cursive; color: purple;}
-th {font-family: 'Cuprum', sans-serif; text-align: left; font-size: 20px; padding: 20px 0}
-td.city-description {text-align: justify; padding: 0 18px; vertical-align: top;}
+body {font-family: 'Cuprum', sans-serif; position: relative; margin: 0px; background-image: url("/assets/images/splash.jpg"); height: 100%;}
+#body {background: -moz-linear-gradient(bottom, rgba(255,255,255,1) 77%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(bottom, rgba(255,255,255,1) 77%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to top, rgba(255,255,255,1) 77%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */}
+#body {padding: 10px; padding-bottom: 150px; padding-right: 20%; padding-left: 20%; padding-top: 100px;}
 
+
+/* GLOBAL */
+h1 {text-align: center; font-family: 'Pacifico', cursive; font-size: 20px; font-weight: normal}
+h2 {text-align: center; font-family: 'Cuprum', sans-serif; font-size: 20px; font-weight: normal; margin-bottom: 175px;}
+h3 {display: flex; align-items: center; justify-content: center;}
+h3 span {position: relative; color: red; background: transparent; margin: 0 30px; font-family: 'Pacifico', cursive;}
+h3:before {background: red; height: 2px; flex: 1; content:""}
+th {font-family: 'Cuprum', sans-serif; text-align: left; font-size: 20px; padding: 20px 0}
+.container {border: 0;}
+a {text-decoration: none;}
+ul {list-style: none;}
+.nav-wrapper {background: #e9e9e9; padding-left: 20%; padding-right: 0} 
+tr.Book-now {text-align: center;}
+button.bookbtn {margin-bottom: 10px; font-weight: bold}
+a:hover {color: orange}
+td#city-description-grid {text-align: left}
+.Featured-city-list tr {line-height: 49px}
+.city-list {display:hidden}
+.far {font-weight: 900 !important;}
+
+/* HEADER CONTAINER */
 .navlinks-container {position: relative; list-style: none; display: flex; align-items: center; justify-content: space-around; padding-left: 30px;}
 .CompanyName {display: flex;}
 .CompanyName::before {content:url("/assets/images/logo_small.png"); position: relative; right: 15px}
 .nav-container {display:flex; align-items: center; justify-content: flex-start}
 .search {border-radius: 12px; color: lightgray; position: absolute; right: 20%;}
 .search::after {font-family: "Font Awesome 5 Free"; position: relative; content:"\f002"; left: 4px; font-weight: 900; font-size: .875em; background: white; padding: 2px; padding-bottom: 2px; border: 1px solid lightgray; border-radius: 2px; margin-top: 4px;}
-.footer-container {background-color: purple; position: relative; display: flex; width: 100%; align-items: center; justify-content: center}
-#footer {padding: 20px;}
 
-#body {padding: 10px; padding-bottom: 150px; padding-right: 20%; padding-left: 20%; padding-top: 100px;}
-.footer {position: absolute; bottom: 0; width: 100%; height: 120px; background: purple; display: flex; justify-content: space-evenly;}
-#social-media {width: 20%; color: white; display: flex; justify-content: space-evenly; padding-left: 14%; padding-right: 14%}
-#social-media a {color: purple; background-color:white; padding: 10px; border-radius: 2px}
-#contact-info a{font-family: 'Cuprum', sans-serif; color: white; font-size: 14px;}
-body {position: relative; margin: 0px; background-image: url("/assets/images/splash.jpg"); height: 100%}
-#body {background: -moz-linear-gradient(bottom, rgba(255,255,255,1) 65%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(bottom, rgba(255,255,255,1) 65%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to top, rgba(255,255,255,1) 65%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */}
-.container {border: 0;}
-#header {height: 120px; position: fixed; width: 100%}
-.Featured-header {padding-top: 175px;}
-ul {list-style: none;}
+#header {height: 120px; position: fixed; width: 100%; transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out; 
+    z-index: 9999;
+    top: 0}
+.shrink {padding: 20px 0}
+table.DestHeader {display: flex;}
+
+/* FEATURED CONTAINER */
 .Featured-content {padding: 0; display: flex; width: 100%; justify-content: space-evenly}
 .Featured-content ul {padding:0; width: 100%}
 .Featured-content ul li {display: flex; justify-content: space-evenly; padding-right: 20px;}
+tr.city-name {font-family: 'Pacifico', cursive; color: purple; font-weight: bold; font-size: 18px; text-align: center;}
+td.city-name {font-family: 'Pacifico', cursive; color: purple; font-weight: bold; font-size: 18px; text-align: center;}
+
+#city-name-grid {text-align: center;}
+td#city-description-grid {text-align: justify; padding: 0 18px; vertical-align: top;}
+td#city-description-list {vertical-align: center;}
+td#city-name-list {text-align: left; vertical-align: bottom;}
+tr.images {text-align: center; width: 100%;}
+table.Featured-city-list {width: 100%}
+
+/* REVIEWS CONTAINER */
+td.customer-review {vertical-align: top}
+.customer-image {padding-right: 10px;}
+td.customer-rating {padding-top: 10px;}
+
+/* FOOTER CONTAINER*/
 #businessadd1::before {position: relative; content: "\f1ad"; font-family: "Font Awesome 5 Free"; font-weight: 900; color:white; right:10px;}
 #businessadd2 {padding-left: 14px}
 #businessnum::before {position: relative; content: "\f095"; font-family: "Font Awesome 5 Free"; font-weight: 900; color:white; right:10px;}
 #businessemail::before {position: relative; content: "\f0e0"; font-family: "Font Awesome 5 Free"; font-weight: 900; color:white; right:10px;}
+.footer-container {background-color: purple; position: relative; display: flex; width: 100%; align-items: center; justify-content: center}
+#footer {padding: 20px;}
+.footer {position: absolute; bottom: 0; width: 100%; height: 120px; background: purple; display: flex; justify-content: space-evenly;}
+#social-media {width: 20%; color: white; display: flex; justify-content: space-evenly; padding-left: 14%; padding-right: 14%}
+#social-media a {color: purple; background-color:white; padding: 10px; border-radius: 2px}
+#contact-info a{font-family: 'Cuprum', sans-serif; color: white; font-size: 14px;}
 
-
-
-.nav-wrapper {background: #e9e9e9; padding-left: 20%; padding-right: 0} 
+/* BOOK NOW BUTTON */
+.bookbtn {padding: 20px 70px; background: red; position: absolute; display: flex; margin-left: 8px; margin-top: 300px; box-shadow: 0px -1px 5px black;}
 
 /* Dropdown Button */
 .dropbtn {color: gray; background-color: transparent; padding-top: 7px; font-size: 14px; border: none; font-family: 'Cuprum', sans-serif; margin-bottom: 10px; margin-top: 10px;}
@@ -64,3 +98,30 @@ ul {list-style: none;}
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: transparent;}
 
+table.city-list {display: none;}
+
+button.bookbtn {opacity: 0;}
+button.bookbtn:hover {opacity: 1}
+button.View {position: absolute; padding: 2px; opacity: 0; margin-top: 5px}
+button#Grid {opacity: 0}
+button#Grid:hover {opacity: 1}
+button#List {opacity: 0}
+button#List:hover {opacity: 1}
+
+
+.Africa, .Americas, .Asia, .Europe {display: none;}
+.Reviews {margin-top: 100px;}
+.row2 {margin-top: 100px; display:collapse;}
+
+/* OVERLAYS 
+    display: inline-block;
+    zoom: 1;
+    position: relative;
+    vertical-align: top;
+    width: 300px;
+    font-family: Trebuchet,Tahoma,Arial,sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: left;
+    box-shadow: 0 0 7px #fff; /*
